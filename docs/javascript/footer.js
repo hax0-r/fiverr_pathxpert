@@ -3,7 +3,7 @@ footer.innerHTML = `
         <footer class="bg-[#333333] p-5">
             <div class="max-w-7xl w-full mx-auto md:flex-row flex-col flex items-center justify-between gap-5">
                 <a href="/index.html">
-                    <img src="/docs/assets/images/whiteLogo.svg" class="h-10" alt="">
+                    <img src="/docs/assets/images/whiteLogo.svg"  class="h-10" alt="">
                 </a>
                 <div class="">
                     <ul class="flex md:flex-row flex-col items-center gap-5 text-white">
