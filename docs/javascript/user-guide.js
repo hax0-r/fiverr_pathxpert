@@ -11,26 +11,51 @@ const searchInput = document.querySelector("input[type='text']");
 
 // slider open/close
 
-openSlidebar.addEventListener('click',()=>{
+openSlidebar.addEventListener('click', () => {
     slidebar.classList.add("w-full")
     slidebar.classList.remove("w-0")
 })
 
-Array.from(closeSliderbar).forEach((btn)=>{
-    btn.addEventListener('click',()=>{
+Array.from(closeSliderbar).forEach((btn) => {
+    btn.addEventListener('click', () => {
         slidebar.classList.add("w-0")
         slidebar.classList.remove("w-full")
     })
 })
 
+// slidebar Links
+
+const categoryList = document.getElementById("category-list");
+
+// Render the titles in a list
+function renderTitleList(data) {
+    categoryList.innerHTML = "";
+    data.forEach((card) => {
+        const cardId = card.Title.toLowerCase().replace(/\s+/g, "-");
+        const li = document.createElement("li");
+
+        li.className =
+            "bg-[#4b3b79] mt-2.5 rounded-lg px-5 py-3.5 cursor-pointer hover:bg-[#5a4a8a] transition-all duration-500 text-zinc-100 font-medium";
+
+        // Add anchor inside li
+        li.innerHTML = `<a href="#${cardId}">${card.Title}</a>`;
+        categoryList.appendChild(li);
+    });
+}
+
+
+renderTitleList(cardsData);
+
 let currentCategory = "all"; // "patient", "professional", or "all"
 
 // Render cards
 function renderCards(data) {
-    container.innerHTML = ""; // Clear previous
+    container.innerHTML = "";
     data.forEach((card) => {
+        const cardId = card.Title.toLowerCase().replace(/\s+/g, "-"); // e.g., "Creación de casos" → "creación-de-casos"
+
         const cardHTML = `
-      <div class="md:mb-12 mb-8">
+      <div id="${cardId}" class="md:mb-12 mb-8 scroll-mt-20">
         <h2 class="text-xl font-semibold text-[#322659]">${card.Topic} &nbsp;
           <span class="px-2 py-0.5 rounded-md border border-[#322659] text-xs">${card.Guide}</span>
         </h2>
@@ -44,6 +69,7 @@ function renderCards(data) {
         container.innerHTML += cardHTML;
     });
 }
+
 
 // Button active state
 function setActiveButton(activeBtn, inactiveBtn) {

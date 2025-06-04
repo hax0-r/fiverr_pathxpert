@@ -20,23 +20,25 @@
 </head>
 
 
-<body class="">
+<body class=" overflow-x-hidden">
 
     <div id="bottomToTopScroll"></div>
 
 
     <div class="bg-[#fff]">
         <div id="navbar"></div>
-        <section class="w-full p-5 md:flex-row flex-col h-[calc(100vh-7rem)] flex items-center md:justify-between justify-center gap-7 max-w-7xl mx-auto">
-            <div class="md:max-w-[50%] w-full md:text-start text-center">
+        <section class="w-full p-5 md:h-[calc(100vh-7rem)] md:py-5 py-20 flex items-center md:justify-between justify -center gap-7 max-w-7xl mx-auto">
+            <div class="md:max-w-[50%] w-full w-full text-start z-10">
                 <h1 class="text-[#322659] font-semibold md:text-5xl text-3xl">Tu salud en un solo lugar</h1>
                 <p class="md:text-xl text-zinc-600 mt-5">Gestiona tus estudios en cualquier momento</p>
-                <button
-                    class="px-10 py-3.5 mt-4 transition-all duration-500 hover:bg-[#4a369d] cursor-pointer rounded-lg text-white bg-[#322659]">Ver
-                    mis resultados</button>
+                <div class="flex items-start justify-start">
+                    <a href="/user-guide.html"
+                        class="px-10 py-3.5 mt-4 transition-all duration-500 hover:bg-[#4a369d] cursor-pointer rounded-lg text-white bg-[#322659]">Ver
+                        mis resultados</a>
+                </div>
             </div>
-            <div class="md:max-w-[50%] w-full">
-                <img src="/docs/assets/images/portada_medico_retoque.png" alt="">
+            <div class="md:max-w-[50%] max-w-[50%] absolute md:relative -right-0 w-full">
+                <img src="/docs/assets/images/portada_medico_retoque.png" class="md:w-full w-auto md:h-auto h-[15rem]" alt="">
             </div>
         </section>
         <section class="w-full p-5 max-w-3xl mx-auto">
