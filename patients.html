@@ -26,27 +26,62 @@
 
 
     <div class="bg-[#fff]">
-        <div id="navbar"></div>
-        <section class="w-full p-5 md:h-[calc(100vh-7rem)] md:py-5 py-20 flex items-center md:justify-between justify -center gap-7 max-w-7xl mx-auto">
-            <div class="md:max-w-[50%] w-full w-full text-start z-10">
-                <h1 data-aos="fade-up" class="text-[#322659] font-semibold md:text-5xl text-3xl">Tu salud en un solo lugar</h1>
-                <p data-aos="fade-up" data-aos-delay="200" class="md:text-xl text-zinc-600 mt-5">Gestiona tus estudios en cualquier momento</p>
-                <div data-aos-delay="400" data-aos="fade-up" class="flex items-start justify-start">
-                    <a href="/user-guide.html"
-                        class="px-10 py-3.5 mt-4 transition-all duration-500 hover:bg-[#4a369d] cursor-pointer rounded-lg text-white bg-[#322659]">Ver
-                        mis resultados</a>
+        <nav data-aos="fade-down" class="bg-white shadow-md fixed top-0 left-0 w-full z-40 ">
+            <div class="md:h-28 h-40 flex md:flex-row flex-col mx-auto items-center justify-between max-w-7xl p-4">
+                <a href="/index.html">
+                    <img src="/docs/assets/images/logo.png" class="md:h-24 h-16" alt="">
+                </a>
+                <div class="flex md:px-2 items-center justify-center gap-3 md:mt-0 mt-2">
+                    <a href="/patients.html"
+                        class="w-full p-3 hover:bg-white hover:text-[#312759] transition-all duration-500 cursor-pointer rounded-lg text-nowrap bg-[#312759] text-white">
+                        Pacientes
+                    </a>
+
+                    <a href="/professionals.html"
+                        class="w-full p-3 transition-all hover:bg-[#312759] hover:text-[#fff] duration-500 border border-white cursor-pointer rounded-lg text-nowrap bg-transparent text-[#312759]">
+                        Profesionales
+                    </a>
+
                 </div>
             </div>
-            <div data-aos="fade-left" class="md:max-w-[50%] max-w-[50%] absolute md:relative -right-0 w-full">
-                <img src="/docs/assets/images/portada_medico_retoque.png" class="md:w-full w-auto md:h-auto h-[15rem]" alt="">
+        </nav>
+        <div class="md:h-28 h-40"></div>
+        <section
+            class="relative w-full p-5 py-20 md:py-5 flex items-center justify-center md:justify-between gap-7 max-w-7xl mx-auto overflow-hidden">
+            <!-- Text Content -->
+            <div class="z-10 w-full max-w-[100%] sm:max-w-[75%] md:max-w-[40%] text-start">
+                <h1 data-aos="fade-up"
+                    class="text-[#322659] font-semibold md:text-5xl text-3xl leading-snug break-words">
+                    Tu salud en un solo lugar
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="200" class="md:text-xl text-zinc-600 mt-5">
+                    Gestiona tus estudios en cualquier momento
+                </p>
+                <div data-aos-delay="400" data-aos="fade-up" class="flex items-start justify-start">
+                    <a href="/user-guide.html"
+                        class="px-10 py-3.5 mt-4 transition-all duration-500 hover:bg-[#4a369d] cursor-pointer rounded-lg text-white bg-[#322659]">
+                        Ver mis resultados
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image with cropping on tablet/mobile -->
+            <div data-aos="fade-left"
+                class="absolute md:relative right-0 w-[50%] max-w-[50%] h-full z-0 overflow-hidden">
+                <img src="/docs/assets/images/portada_medico_retoque.png"
+                    class="w-full h-full object-cover object-left-top" alt="" />
             </div>
         </section>
+
+
         <section class="w-full p-5 max-w-3xl mx-auto">
-            <h2 data-aos="fade-up" class="text-[#322659] font-semibold md:text-4xl text-center text-2xl">Preguntas Frecuentes</h2>
+            <h2 data-aos="fade-up" class="text-[#322659] font-semibold md:text-4xl text-center text-2xl">Preguntas
+                Frecuentes</h2>
 
             <div class="md:mt-14 mt-10">
                 <div class="border-b border-zinc-300 pb-6" data-aos="fade-up">
-                    <button onclick="toggleAccordion(1)" class="w-full cursor-pointer flex justify-between items-center">
+                    <button onclick="toggleAccordion(1)"
+                        class="w-full cursor-pointer flex justify-between items-center">
                         <p class="text-lg font-medium">¿Cómo me creo una cuenta?</p>
                         <i id="icon-1"
                             class="fa-solid fa-angle-down text-gray-600 transition-transform duration-300"></i>
@@ -59,31 +94,36 @@
                     </div>
                 </div>
                 <div class="mt-5 border-b border-zinc-300 pb-6" data-aos="fade-up">
-                    <button onclick="toggleAccordion(2)" class="w-full cursor-pointer flex justify-between items-center">
+                    <button onclick="toggleAccordion(2)"
+                        class="w-full cursor-pointer flex justify-between items-center">
                         <p class="text-lg font-medium text-start">¿Cómo accedo a mis estudios médicos?</p>
                         <i id="icon-2"
                             class="fa-solid fa-angle-down text-gray-600 transition-transform duration-300"></i>
                     </button>
                     <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <p class="pt-3 text-zinc-600">
-                            Inicia sesión en nuestra plataforma para consultar o descargar tus estudios en cualquier momento
+                            Inicia sesión en nuestra plataforma para consultar o descargar tus estudios en cualquier
+                            momento
                         </p>
                     </div>
                 </div>
                 <div class="mt-5 border-b border-zinc-300 pb-6" data-aos="fade-up">
-                    <button onclick="toggleAccordion(3)" class="w-full cursor-pointer flex justify-between items-center">
+                    <button onclick="toggleAccordion(3)"
+                        class="w-full cursor-pointer flex justify-between items-center">
                         <p class="text-lg font-medium text-start">¿Qué sucede si me atiendo en varias instituciones?</p>
                         <i id="icon-3"
                             class="fa-solid fa-angle-down text-gray-600 transition-transform duration-300"></i>
                     </button>
                     <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <p class="pt-3 text-zinc-600">
-                            Siempre que los centros utilicen PathXpert, tendrás acceso a toda tu información en un solo lugar
+                            Siempre que los centros utilicen PathXpert, tendrás acceso a toda tu información en un solo
+                            lugar
                         </p>
                     </div>
                 </div>
                 <div class="mt-5 border-b border-zinc-300 pb-6" data-aos="fade-up">
-                    <button onclick="toggleAccordion(4)" class="w-full cursor-pointer flex justify-between items-center">
+                    <button onclick="toggleAccordion(4)"
+                        class="w-full cursor-pointer flex justify-between items-center">
                         <p class="text-lg font-medium text-start">¿Desde qué dispositivos puedo ver mis estudios?</p>
                         <i id="icon-4"
                             class="fa-solid fa-angle-down text-gray-600 transition-transform duration-300"></i>
@@ -103,7 +143,6 @@
     <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="./docs/javascript/global.js"></script>
-    <script src="./docs/javascript/navbar.js"></script>
     <script src="./docs/javascript/footer.js"></script>
 
 </body>
