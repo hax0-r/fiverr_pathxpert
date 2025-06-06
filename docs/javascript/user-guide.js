@@ -9,6 +9,53 @@ const btnProfessional = document.getElementById("btn-professional");
 const searchForm = document.querySelector("form");
 const searchInput = document.querySelector("input[type='text']");
 
+// slidebar Links
+
+const categoryList = document.getElementById("category-list");
+
+// Render the titles in a list
+function renderTitleList(data) {
+    categoryList.innerHTML = "";
+    data.forEach((card) => {
+        const cardId = card.Title.toLowerCase().replace(/\s+/g, "-");
+        const li = document.createElement("li");
+
+        li.className =
+            "bg-[#4b3b79] closeSliderbar mt-2.5 rounded-lg px-5 py-3.5 cursor-pointer hover:bg-[#5a4a8a] transition-all duration-500 text-zinc-100 font-medium";
+
+        // Add anchor inside li
+        li.innerHTML = `<a href="#${cardId}" data-id="${cardId}">${card.Title}</a>`;
+        categoryList.appendChild(li);
+    });
+}
+
+
+renderTitleList(cardsData);
+
+categoryList.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") {
+        e.preventDefault();
+        const cardId = e.target.getAttribute("data-id");
+
+        const selectedCard = cardsData.find(card =>
+            card.Title.toLowerCase().replace(/\s+/g, "-") === cardId
+        );
+
+        if (selectedCard) {
+            renderCards([selectedCard]); // show only that card
+            slidebar.classList.add("w-0"); // close the sidebar
+            slidebar.classList.remove("w-full");
+
+            // Scroll to the element after rendering (small timeout to ensure render completes)
+            // setTimeout(() => {
+            //     const el = document.getElementById(cardId);
+            //     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            // }, 100);
+        }
+    }
+});
+
+
 // slider open/close
 
 openSlidebar.addEventListener('click', () => {
@@ -23,29 +70,6 @@ Array.from(closeSliderbar).forEach((btn) => {
     })
 })
 
-// slidebar Links
-
-const categoryList = document.getElementById("category-list");
-
-// Render the titles in a list
-function renderTitleList(data) {
-    categoryList.innerHTML = "";
-    data.forEach((card) => {
-        const cardId = card.Title.toLowerCase().replace(/\s+/g, "-");
-        const li = document.createElement("li");
-
-        li.className =
-            "bg-[#4b3b79] mt-2.5 rounded-lg px-5 py-3.5 cursor-pointer hover:bg-[#5a4a8a] transition-all duration-500 text-zinc-100 font-medium";
-
-        // Add anchor inside li
-        li.innerHTML = `<a href="#${cardId}">${card.Title}</a>`;
-        categoryList.appendChild(li);
-    });
-}
-
-
-renderTitleList(cardsData);
-
 let currentCategory = "all"; // "patient", "professional", or "all"
 
 // Render cards
@@ -55,7 +79,7 @@ function renderCards(data) {
         const cardId = card.Title.toLowerCase().replace(/\s+/g, "-"); // e.g., "Creación de casos" → "creación-de-casos"
 
         const cardHTML = `
-      <div id="${cardId}" class="md:mb-12 mb-8 scroll-mt-20">
+      <div id="${cardId}" class="md:my-10 my-6 scroll-mt-20">
         <h2 class="text-xl font-semibold text-[#322659]">${card.Topic} &nbsp;
           <span class="px-2 py-0.5 rounded-md border border-[#322659] text-xs">${card.Guide}</span>
         </h2>

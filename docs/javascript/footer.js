@@ -10,10 +10,10 @@ footer.innerHTML = `
 
     <!-- Social Media Icons -->
     <div class="flex items-center text-white gap-5">
-      <a href="">
+      <a class="transition-all duration-500 hover:text-zinc-400" href="">
         <i class="fa-brands fa-instagram text-2xl"></i>
       </a>
-      <a href="">
+      <a class="transition-all duration-500 hover:text-zinc-400" href="">
         <i class="fa-brands fa-facebook text-2xl"></i>
       </a>
     </div>
@@ -21,13 +21,13 @@ footer.innerHTML = `
     <!-- Links Block -->
     <div class="text-white text-center">
       <ul class="flex flex-col md:flex-row items-center gap-5">
-        <li><a href="/privacy-policy.html">Privacidad</a></li>
+        <li><a class="transition-all duration-500 hover:text-zinc-400" href="/privacy-policy.html">Privacidad</a></li>
         <span class="hidden md:block">|</span>
-        <li><a href="/terms.html">Términos</a></li>
+        <li><a class="transition-all duration-500 hover:text-zinc-400" href="/terms.html">Términos</a></li>
         <span class="hidden md:block">|</span>
-        <li><a href="/support.html">Soporte</a></li>
+        <li><a class="transition-all duration-500 hover:text-zinc-400" href="/support.html">Soporte</a></li>
         <span class="hidden md:block">|</span>
-        <li><a href="/user-guide.html">Guía de usuario</a></li>
+        <li><a class="transition-all duration-500 hover:text-zinc-400" href="/user-guide.html">Guía de usuario</a></li>
       </ul>
       <p class="mt-5">© 2025 PathXpert.com.ar o sus productos</p>
     </div>
